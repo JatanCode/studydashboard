@@ -63,10 +63,7 @@
         .countdown-box { margin-top: 30px; padding-top: 20px; border-top: 1px solid var(--border); }
         .countdown-val { font-family: var(--font-clock); font-size: 2rem; color: var(--accent); }
 
-        /* --- CUSTOM TOGGLE SWITCH --- */
-        .switch {
-            position: relative; display: inline-block; width: 45px; height: 24px;
-        }
+        .switch { position: relative; display: inline-block; width: 45px; height: 24px; }
         .switch input { opacity: 0; width: 0; height: 0; }
         .slider {
             position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0;
@@ -80,56 +77,30 @@
         input:checked + .slider { background-color: var(--accent); }
         input:checked + .slider:before { transform: translateX(20px); background-color: #000; }
 
-        .deduction-container {
-            display: flex; align-items: center; gap: 10px; margin-top: 15px; font-size: 0.65rem;
-        }
-        .log-input { 
-            background: transparent; border: none; border-bottom: 1px solid var(--border); 
-            color: var(--accent); width: 80px; font-size: 0.65rem;
-        }
-        .minus-input {
-            width: 35px !important; padding: 3px !important; font-size: 0.65rem !important; border-radius: 5px !important;
-        }
+        .deduction-container { display: flex; align-items: center; gap: 10px; margin-top: 15px; font-size: 0.65rem; }
+        .log-input { background: transparent; border: none; border-bottom: 1px solid var(--border); color: var(--accent); width: 80px; font-size: 0.65rem; }
+        .minus-input { width: 35px !important; padding: 3px !important; font-size: 0.65rem !important; border-radius: 5px !important; }
         
         .list-header { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; }
         .clear-btn { font-size: 0.5rem; color: var(--red-alert); cursor: pointer; text-decoration: underline; opacity: 0.6; }
-        .clear-btn:hover { opacity: 1; }
-
-        .deduction-list {
-            margin-top: 5px; max-height: 100px; overflow-y: auto; font-size: 0.6rem;
-        }
-        .deduction-item {
-            display: flex; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.05);
-            padding: 6px 0; font-family: var(--font-clock); cursor: pointer;
-        }
+        .deduction-list { margin-top: 5px; max-height: 100px; overflow-y: auto; font-size: 0.6rem; }
+        .deduction-item { display: flex; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.05); padding: 6px 0; font-family: var(--font-clock); cursor: pointer; }
         .deduction-item:hover { color: var(--red-alert); text-decoration: line-through; }
 
-        .status-badge {
-            position: absolute; top: 40px; right: 40px; padding: 5px 15px;
-            border-radius: 20px; border: 1px solid var(--accent); font-size: 0.6rem;
-            font-weight: 900; letter-spacing: 2px;
-        }
+        .status-badge { position: absolute; top: 40px; right: 40px; padding: 5px 15px; border-radius: 20px; border: 1px solid var(--accent); font-size: 0.6rem; font-weight: 900; letter-spacing: 2px; }
 
         .nav-pills { display: flex; gap: 10px; margin-bottom: 20px; background: rgba(0,0,0,0.4); padding: 6px; border-radius: 25px; }
         .pill { flex: 1; padding: 12px; cursor: pointer; border-radius: 20px; text-align: center; font-size: 0.75rem; transition: 0.3s; opacity: 0.4; font-weight: 700; }
         .pill.active { background: var(--accent); opacity: 1; color: #000; box-shadow: 0 0 15px var(--accent); }
 
         .beast-mode-container { display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; padding: 0 10px; font-size: 0.65rem; letter-spacing: 2px; font-weight: 800; }
-        
         .tool-display { font-family: var(--font-clock); font-size: 3.8rem; margin-bottom: 25px; color: white; text-align: center; }
 
         .timer-inputs { display: flex; gap: 8px; margin-bottom: 20px; }
-        input { 
-            width: 100%; background: rgba(0,0,0,0.3); border: 1px solid var(--border); 
-            padding: 12px; border-radius: 12px; color: white; text-align: center; font-family: var(--font-clock);
-        }
+        input { width: 100%; background: rgba(0,0,0,0.3); border: 1px solid var(--border); padding: 12px; border-radius: 12px; color: white; text-align: center; font-family: var(--font-clock); }
 
         .btn-row { display: flex; gap: 12px; }
-        button { 
-            flex: 1; padding: 18px; border-radius: 18px; border: none; cursor: pointer; 
-            font-family: var(--font-main); font-weight: 900; text-transform: uppercase;
-            background: rgba(255,255,255,0.05); color: white; transition: 0.3s; font-size: 0.7rem;
-        }
+        button { flex: 1; padding: 18px; border-radius: 18px; border: none; cursor: pointer; font-family: var(--font-main); font-weight: 900; text-transform: uppercase; background: rgba(255,255,255,0.05); color: white; transition: 0.3s; font-size: 0.7rem; }
         button:hover:not(:disabled) { background: white; color: black; transform: translateY(-2px); }
         button:disabled { opacity: 0.1; cursor: not-allowed; }
         
@@ -145,29 +116,22 @@
     <div class="dashboard">
         <div class="panel watch-side">
             <div id="status-mode" class="status-badge">SYSTEM READY</div>
-            
             <div class="gauge-section">
                 <div class="gauge-label">Master Chronometer</div>
                 <div class="time-display" id="clock">00:00:00</div>
             </div>
-
             <div class="countdown-box">
                 <div class="gauge-label">Fuel Remaining (Until 11 PM)</div>
                 <div class="countdown-val" id="countdown-ist">--:--:--</div>
-                
                 <div class="deduction-container">
                     <span>Deduct:</span>
                     <input type="number" id="minus-h" class="minus-input" placeholder="H">
                     <input type="number" id="minus-m" class="minus-input" placeholder="M">
                     <input type="text" id="minus-log" class="log-input" placeholder="Work tag...">
-                    <label class="switch">
-                        <input type="checkbox" id="minus-trigger" onchange="applyDeduction()">
-                        <span class="slider"></span>
-                    </label>
+                    <label class="switch"><input type="checkbox" id="minus-trigger" onchange="applyDeduction()"><span class="slider"></span></label>
                 </div>
-                
                 <div class="list-header">
-                    <span class="gauge-label" style="font-size: 0.5rem;">Activity Log (Click item to remove)</span>
+                    <span class="gauge-label" style="font-size: 0.5rem;">Activity Log (Click to remove)</span>
                     <span class="clear-btn" onclick="clearAllDeductions()">Reset Fuel</span>
                 </div>
                 <div class="deduction-list" id="log-list"></div>
@@ -179,15 +143,10 @@
                 <div class="pill active" id="sw-pill" onclick="switchTool('sw')">Stopwatch</div>
                 <div class="pill" id="tm-pill" onclick="switchTool('tm')">Timer</div>
             </div>
-
             <div class="beast-mode-container">
                 <label>BEAST MODE COMMITTED</label>
-                <label class="switch">
-                    <input type="checkbox" id="beast-check" onchange="toggleBeastMode()">
-                    <span class="slider"></span>
-                </label>
+                <label class="switch"><input type="checkbox" id="beast-check" onchange="toggleBeastMode()"><span class="slider"></span></label>
             </div>
-
             <div id="sw-section">
                 <div class="tool-display" id="sw-display">00:00:00</div>
                 <div class="btn-row">
@@ -195,7 +154,6 @@
                     <button onclick="resetStopwatch()" id="sw-reset">Reset</button>
                 </div>
             </div>
-
             <div id="tm-section" class="hidden">
                 <div class="tool-display" id="tm-display">00:00:00</div>
                 <div class="timer-inputs" id="tm-inputs-container">
@@ -214,8 +172,9 @@
 
     <script>
         let beastMode = false;
-        let swRunning = false;
-        let tmRunning = false;
+        let swRunning = false, tmRunning = false;
+        let swTime = 0, timeLeft = 0;
+        let swInterval, tmInterval;
         let totalDeductionMs = parseInt(localStorage.getItem('totalDeduction')) || 0;
         let logs = JSON.parse(localStorage.getItem('deductionLogsData')) || [];
 
@@ -224,14 +183,36 @@
             const savedBeast = localStorage.getItem('beastMode') === 'true';
             document.getElementById('beast-check').checked = savedBeast;
             toggleBeastMode();
+
+            // RESUME STOPWATCH
+            const swStart = localStorage.getItem('swStart');
+            if (swStart) {
+                const elapsed = Math.floor((Date.now() - parseInt(swStart)) / 1000);
+                swTime = (parseInt(localStorage.getItem('swBaseTime')) || 0) + elapsed;
+                toggleStopwatch(true); 
+            } else {
+                swTime = parseInt(localStorage.getItem('swBaseTime')) || 0;
+                updateSwDisplay();
+            }
+
+            // RESUME TIMER
+            const tmEnd = localStorage.getItem('tmEnd');
+            if (tmEnd) {
+                const remaining = Math.floor((parseInt(tmEnd) - Date.now()) / 1000);
+                if (remaining > 0) {
+                    timeLeft = remaining;
+                    toggleTimer(true);
+                } else {
+                    localStorage.removeItem('tmEnd');
+                }
+            }
         };
 
         function renderLogs() {
             const list = document.getElementById('log-list');
             list.innerHTML = logs.map((log, index) => `
                 <div class="deduction-item" onclick="removeLog(${index})">
-                    <span>${log.tag}</span> 
-                    <span>-${log.h}h ${log.m}m</span>
+                    <span>${log.tag}</span> <span>-${log.h}h ${log.m}m</span>
                 </div>
             `).join('');
             localStorage.setItem('deductionLogsData', JSON.stringify(logs));
@@ -242,23 +223,18 @@
             const hVal = parseInt(document.getElementById('minus-h').value) || 0;
             const mVal = parseInt(document.getElementById('minus-m').value) || 0;
             const tag = document.getElementById('minus-log').value || "Work Log";
-            
             if(checkbox.checked && (hVal > 0 || mVal > 0)) {
                 const ms = (hVal * 3600 * 1000) + (mVal * 60 * 1000);
                 totalDeductionMs += ms;
                 localStorage.setItem('totalDeduction', totalDeductionMs);
-                
                 logs.unshift({ tag, h: hVal, m: mVal, ms });
                 renderLogs();
-
                 document.getElementById('minus-h').value = '';
                 document.getElementById('minus-m').value = '';
                 document.getElementById('minus-log').value = '';
                 setTimeout(() => { checkbox.checked = false; }, 600);
                 updateSystem();
-            } else {
-                setTimeout(() => { checkbox.checked = false; }, 300);
-            }
+            } else { setTimeout(() => { checkbox.checked = false; }, 300); }
         }
 
         function removeLog(index) {
@@ -270,45 +246,31 @@
         }
 
         function clearAllDeductions() {
-            if(confirm("Flush all deduction data and reset Fuel?")) {
-                totalDeductionMs = 0;
-                logs = [];
-                localStorage.removeItem('totalDeduction');
-                localStorage.removeItem('deductionLogsData');
-                renderLogs();
-                updateSystem();
+            if(confirm("Flush all deduction data?")) {
+                totalDeductionMs = 0; logs = [];
+                localStorage.removeItem('totalDeduction'); localStorage.removeItem('deductionLogsData');
+                renderLogs(); updateSystem();
             }
         }
 
         function updateSystem() {
             const now = new Date();
             document.getElementById('clock').innerText = now.toTimeString().split(' ')[0];
-
             const hrs = now.getHours();
             const statusBox = document.getElementById('status-mode');
-            if (hrs >= 23 || hrs < 9) {
-                statusBox.innerText = "SLEEP MODE";
-                statusBox.style.borderColor = "#555";
-            } else {
-                statusBox.innerText = "STUDY MODE";
-                statusBox.style.borderColor = "var(--accent)";
-            }
-
+            if (hrs >= 23 || hrs < 9) { statusBox.innerText = "SLEEP MODE"; statusBox.style.borderColor = "#555"; }
+            else { statusBox.innerText = "STUDY MODE"; statusBox.style.borderColor = "var(--accent)"; }
             let target = new Date();
             target.setHours(23, 0, 0, 0);
             if (now > target) target.setDate(target.getDate() + 1);
-            
             let diff = (target - now) - totalDeductionMs;
             if (diff < 0) diff = 0;
-
             let h = Math.floor(diff / 3600000).toString().padStart(2, '0');
             let m = Math.floor((diff % 3600000) / 60000).toString().padStart(2, '0');
             let s = Math.floor((diff % 60000) / 1000).toString().padStart(2, '0');
             document.getElementById('countdown-ist').innerText = `${h}:${m}:${s}`;
         }
-        
         setInterval(updateSystem, 1000);
-        updateSystem();
 
         function toggleBeastMode() {
             beastMode = document.getElementById('beast-check').checked;
@@ -324,46 +286,55 @@
             document.getElementById('tm-pill').classList.toggle('active', type === 'tm');
         }
 
-        // --- STOPWATCH & TIMER ---
-        let swTime = 0, swInterval;
-        function toggleStopwatch() {
+        function updateSwDisplay() {
+            let h = Math.floor(swTime/3600).toString().padStart(2,'0');
+            let m = Math.floor((swTime%3600)/60).toString().padStart(2,'0');
+            let s = (swTime%60).toString().padStart(2,'0');
+            document.getElementById('sw-display').innerText = `${h}:${m}:${s}`;
+        }
+
+        function toggleStopwatch(forceStart = false) {
             const btn = document.getElementById('sw-btn');
-            if(!swRunning) {
+            if(!swRunning || forceStart) {
                 btn.innerText = "Cut Engine";
                 swRunning = true; document.body.classList.add('sports-mode');
+                if(!forceStart) localStorage.setItem('swStart', Date.now());
+                localStorage.setItem('swBaseTime', swTime);
                 swInterval = setInterval(() => {
-                    swTime++;
-                    let h = Math.floor(swTime/3600).toString().padStart(2,'0');
-                    let m = Math.floor((swTime%3600)/60).toString().padStart(2,'0');
-                    let s = (swTime%60).toString().padStart(2,'0');
-                    document.getElementById('sw-display').innerText = `${h}:${m}:${s}`;
+                    const start = parseInt(localStorage.getItem('swStart'));
+                    const elapsed = Math.floor((Date.now() - start) / 1000);
+                    swTime = (parseInt(localStorage.getItem('swBaseTime')) || 0) + elapsed;
+                    updateSwDisplay();
                 }, 1000);
             } else {
                 btn.innerText = "Ignition";
                 swRunning = false; clearInterval(swInterval);
+                localStorage.setItem('swBaseTime', swTime);
+                localStorage.removeItem('swStart');
                 if(!tmRunning) document.body.classList.remove('sports-mode');
             }
         }
+
         function resetStopwatch() {
             if(beastMode) return;
             clearInterval(swInterval); swTime = 0; swRunning = false;
-            document.getElementById('sw-display').innerText = "00:00:00";
-            document.getElementById('sw-btn').innerText = "Ignition";
+            localStorage.removeItem('swStart'); localStorage.setItem('swBaseTime', 0);
+            updateSwDisplay(); document.getElementById('sw-btn').innerText = "Ignition";
             if(!tmRunning) document.body.classList.remove('sports-mode');
         }
 
-        let tmInterval, timeLeft = 0;
-        function addHourToTimer() { timeLeft += 3600; updateTimerDisplay(); }
+        function addHourToTimer() { timeLeft += 3600; updateTimerDisplay(); if(tmRunning) localStorage.setItem('tmEnd', Date.now() + (timeLeft * 1000)); }
         function updateTimerDisplay() {
             let hh = Math.floor(timeLeft/3600).toString().padStart(2,'0');
             let mm = Math.floor((timeLeft%3600)/60).toString().padStart(2,'0');
             let ss = (timeLeft%60).toString().padStart(2,'0');
             document.getElementById('tm-display').innerText = `${hh}:${mm}:${ss}`;
         }
-        function toggleTimer() {
+
+        function toggleTimer(forceStart = false) {
             const btn = document.getElementById('tm-btn');
-            if(!tmRunning) {
-                if(timeLeft <= 0) {
+            if(!tmRunning || forceStart) {
+                if(!forceStart && timeLeft <= 0) {
                     const h = parseInt(document.getElementById('tm-h').value) || 0;
                     const m = parseInt(document.getElementById('tm-m').value) || 0;
                     const s = parseInt(document.getElementById('tm-s').value) || 0;
@@ -373,28 +344,35 @@
                 btn.innerText = "Pause Race";
                 tmRunning = true; document.body.classList.add('sports-mode');
                 document.getElementById('tm-inputs-container').style.opacity = "0.2";
+                if(!forceStart) localStorage.setItem('tmEnd', Date.now() + (timeLeft * 1000));
                 tmInterval = setInterval(() => {
+                    const end = parseInt(localStorage.getItem('tmEnd'));
+                    timeLeft = Math.floor((end - Date.now()) / 1000);
                     if(timeLeft <= 0) {
                         clearInterval(tmInterval); tmRunning = false;
+                        localStorage.removeItem('tmEnd');
                         if(!swRunning) document.body.classList.remove('sports-mode');
                         alert("GOAL REACHED!"); resetTimer(); return;
                     }
-                    timeLeft--; updateTimerDisplay();
+                    updateTimerDisplay();
                 }, 1000);
             } else {
                 btn.innerText = "Resume Race";
                 tmRunning = false; clearInterval(tmInterval);
+                localStorage.removeItem('tmEnd');
                 if(!swRunning) document.body.classList.remove('sports-mode');
             }
         }
+
         function resetTimer() {
             if(beastMode && timeLeft > 0) return; 
             clearInterval(tmInterval); timeLeft = 0; tmRunning = false;
-            document.getElementById('tm-display').innerText = "00:00:00";
-            document.getElementById('tm-btn').innerText = "Start Race";
+            localStorage.removeItem('tmEnd');
+            updateTimerDisplay(); document.getElementById('tm-btn').innerText = "Start Race";
             document.getElementById('tm-inputs-container').style.opacity = "1";
             if(!swRunning) document.body.classList.remove('sports-mode');
         }
+        updateSystem();
     </script>
 </body>
 </html>
